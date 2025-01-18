@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>info bakteri</title>
+</head>
+<body>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(images/bakteri.png); /* Ganti dengan path gambar Anda */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+body::before { /* Overlay agar teks mudah dibaca */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* Warna putih semi-transparan */
+    z-index: -1;
+}
+
+header {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.6); /* Latar belakang semi-transparan putih */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Border tipis dengan transparansi */
+    backdrop-filter: blur(5px); /* Efek blur */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transisi untuk hover */
+}
+
+.section:hover {
+    transform: translateY(-5px); /* Efek melayang saat hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,.2), 0 4px 8px rgba(0,0,0,.1);
+}
+
+.section h2 {
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.section-kesehatan { /* Styling untuk bagian "Kesehatan" */
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    width: 90%; /* Lebar bagian kesehatan */
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.kesehatan-content {
+    display: flex; /* Mengaktifkan flexbox */
+    gap: 20px; /* Jarak antar sub-section */
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+}
+
+.sub-section {
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang sub-section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Border tipis */
+    flex: 1; /* Membuat sub-section memiliki lebar yang sama dan mengisi ruang yang tersedia */
+    min-width: 300px; /* Lebar minimum sub-section agar tidak terlalu sempit */
+    box-sizing: border-box; /* Agar padding dan border termasuk dalam lebar total */
+}
+
+.sub-section h3 {
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+/* ... CSS lainnya ... */
+
+.section-gizi {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    width: 90%;
+    max-width: 900px; /* Lebar maksimum section gizi */
+    margin: 20px auto;
+}
+
+.gizi-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Penting untuk responsif */
+    justify-content: center; /* Agar konten berada di tengah jika tidak cukup ruang */
+}
+
+.sub-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    flex: 1; /* Memberikan lebar yang sama */
+    min-width: 350px; /* Lebar minimum agar tidak terlalu sempit */
+    box-sizing: border-box; /* Agar padding dan border masuk perhitungan lebar */
+}
+
+.sub-section img {
+    max-width: 100%; /* Gambar tidak melebihi lebar container */
+    height: auto;
+    display: block; /* Mencegah spasi kosong di bawah gambar */
+    margin-bottom: 10px; /* Jarak antara gambar dan teks */
+    border-radius: 5px;
+}
+
+.sub-section h3 {
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.container {
+    position: relative; /* Penting agar posisi absolute pada logo berfungsi */
+    /* Style container lainnya */
+}
+
+.logo-link {
+    position: absolute; /* Memposisikan logo */
+    top: 10px; /* Jarak dari atas */
+    left: 10px; /* Jarak dari kanan */
+    z-index: 10; /* Memastikan logo berada di atas konten lain */
+    display: block; /* Mencegah spasi kosong di bawah gambar */
+}
+
+.logo-link img {
+    width: 50px; /* Atur lebar logo sesuai kebutuhan */
+    height: auto; /* Mempertahankan aspek rasio gambar */
+    transition: transform 0.2s; /* Efek transisi untuk hover */
+}
+
+.logo-link:hover img {
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Style untuk konten lainnya */
+.content{
+    text-align: center;
+    margin-top: 50px;
+}
+.pilihan{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.kotak{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+</style>
+    <header>
+        <a href="kesehatan.html" target="_blank" class="logo-link">
+            <img src="images/—Pngtree—back button_5401832.png" alt="kembali">
+        </a>
+        <h1>Bakteri Pada Makanan</h1>
+    </header>
+    <div class="container">
+        <div class="section-gizi">
+            <div class="gizi-content">
+                <div class="sub-section">
+                    <h3>Escherichia coli (E. coli)</h3>
+                    <img src="https://www.cdc.gov/ecoli/media/images/2024/05/DFE-Ecoli-Kinds-2019-Pathogen-Illustration.jpg" alt="Karbohidrat">
+                    <p>Teman-teman tahu apa itu E. coli?
+                        Escherichia coli atau biasa kita kenal dengan E. coli adalah bakteri yang umumnya hidup di usus manusia dan hewan. Sebagian besar strain E. coli tidak berbahaya dan bahkan membantu pencernaan, menghasilkan vitamin K, dan melindungi kita dari bakteri berbahaya lainnya. Namun, beberapa strain E. coli bersifat patogen (menyebabkan penyakit) dan dapat menyebabkan berbagai infeksi loh.
+                    </p>
+                    <p>E. coli juga memiliki beberapa jenis loh, ada yang bersifat non- patogenik (tidak berbahaya) dan ada yang bersifat patogenik (berbahaya), nah E. coli yang bersifat patogenik juga mamiliki beberapa jenis juga nih, yaitu: </p>
+                    <p>1. Shiga toxin-producing E. coli (STEC): Ini adalah jenis yang paling sering dikaitkan dengan wabah dan penyakit serius.menghasilkan racun yang disebut racun Shiga, yang dapat menyebabkan diare berdarah, kram perut yang parah, dan dalam kasus yang jarang terjadi, komplikasi yang mengancam jiwa yang disebut hemolytic uremic syndrome (HUS), yang dapat menyebabkan gagal ginjal. </p>
+                    <p>2. Enteropathogenic E. coli (EPEC): Ini biasanya menyebabkan diare pada bayi dan anak-anak, terutama di negara berkembang.</p> 
+                    <P>3. Enteroaggregative E. coli (EAEC): Menyebabkan diare persisten pada anak-anak dan orang dewasa. </p>
+                    <p>4. Enteroinvasive E. coli (EIEC): Menyebabkan penyakit yang mirip dengan shigellosis (disentri basiler), dengan gejala seperti diare berdarah, kram perut, dan demam.</p>
+                    <p>
+                        Terus apa penyebabnya E. coli patogenik?
+                    </p>
+                    <p>
+                        Penyebabnya karena Makanan yang terkontaminasi, misalnya daging sapi yang kurang matang (terutama daging giling), susu mentah (tidak dipasteurisasi), sayuran mentah (seperti selada dan bayam), dan jus yang tidak dipasteurisasi adalah sumber umum infeksi STEC atau kontaminasi silang seperti memindahkan bakteri dari satu permukaan ke permukaan lain, misalnya dari talenan yang digunakan untuk memotong daging mentah ke sayuran yang akan dimakan mentah.
+                    </p>
+                    <p>
+                        Wah, bahaya sekali yang teman-teman, jadi hati-hati kalau memakan makanan mentah. Harus diperhatikan kebersihannya atau cara pengolahan bahannya yah...
+                    </p>
+                </div>
+                <div class="sub-section">
+                    <h3>Salmonella</h3>
+                    <img src="https://media.istockphoto.com/id/949396188/id/vektor/ilustrasi-vektor-bakteri-salmonella-untuk-konsep-kedokteran.jpg?s=612x612&w=0&k=20&c=9ddFwQsc1qrk30K01MACX9eaw_3pWfGRvJDFuC2KZUs=" alt="Protein">
+                    <p>
+                        Salmonella adalah genus bakteri berbentuk batang, Gram-negatif, yang menyebabkan penyakit yang disebut salmonellosis. Salmonellosis umumnya ditularkan melalui makanan yang terkontaminasi. Bakteri ini dapat hidup di saluran usus manusia dan hewan, dan menyebar melalui tinja (feses).
+                    </p>
+                    <p>
+                        Ada dua spesies utama Salmonella: Salmonella enterica dan Salmonella bongori. Salmonella enterica dibagi lagi menjadi beberapa serovar (serotipe), yang merupakan variasi bakteri dengan karakteristik yang berbeda. Beberapa serovar yang paling dikenal antara lain: <br>
+                        1. Salmonella Typhi: Menyebabkan demam tifoid, infeksi yang berpotensi mengancam jiwa. <br>
+                        2. Salmonella Paratyphi: Menyebabkan demam paratifoid, penyakit yang mirip dengan demam tifoid tetapi umumnya lebih ringan. <br>
+                        3. Salmonella Typhimurium dan Salmonella Enteritidis: Merupakan penyebab umum keracunan makanan (gastroenteritis). <br>
+                    </p>
+                    <p>
+                        Penyebaran Salmonella:
+                    </p>    
+                    <p>
+                        Infeksi Salmonella biasanya terjadi melalui konsumsi makanan atau minuman yang terkontaminasi. Beberapa sumber kontaminasi yang umum antara lain:
+                    </p>    
+                    <p>
+                        1. Makanan mentah atau kurang matang: Daging (terutama unggas), telur, susu yang tidak dipasteurisasi, dan makanan laut. <br>
+                         2. Buah dan sayuran mentah: Terutama jika terkontaminasi oleh air yang tercemar atau pupuk kandang. <br>
+                        3. Kontaminasi silang: Memindahkan bakteri dari makanan mentah ke makanan yang sudah dimasak melalui peralatan dapur, permukaan, atau tangan yang tidak bersih. <br>
+                        4. Kontak dengan hewan peliharaan: Reptil (seperti kura-kura dan iguana), unggas, dan hewan peliharaan lainnya dapat membawa Salmonella. <br>
+                    </p>
+                    <p>
+                        Jadi begitu teman-teman, beberapa bakteri yang berbeda bisa menimbulkan penyakit yang mirip atau lebih berbahaya lainnya. Selalu jaga apa yang kalian makan yah, jangan sampai salah makan dan membahayakan diri sendiri.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section-gizi">
+            <div class="gizi-content">
+                <div class="sub-section">
+                    <h3>Listeria monocytogenes</h3>
+                    <img src="https://cdn.antaranews.com/cache/1200x800/2018/03/bakteri_listeriosis.png" alt="Karbohidrat" width="300px">
+                    <p>
+                        Listeria monocytogenes adalah bakteri yang dapat menyebabkan infeksi serius yang disebut listeriosis. Bakteri ini tergolong Gram-positif, berbentuk batang, dan dapat bergerak menggunakan flagella. L. monocytogenes unik karena kemampuannya untuk tumbuh pada suhu rendah (hingga 0°C), yang memungkinkannya berkembang biak bahkan dalam suhu lemari es. Kemampuan ini membuatnya menjadi ancaman kontaminasi pada makanan yang disimpan dingin.
+                    </p>
+                    <p>
+                        Karakteristik Umum:
+                    </p>
+                    <p>
+                        1. Gram-positif: Diklasifikasikan sebagai bakteri Gram-positif, yang berarti dinding selnya memiliki struktur tertentu yang mempertahankan pewarnaan ungu dalam prosedur pewarnaan Gram. <br>
+                        2. Bergerak: Memiliki flagella (struktur seperti cambuk) yang memungkinkannya untuk bergerak. <br>
+                        3. Tumbuh pada suhu rendah: Kemampuan ini membedakannya dari banyak bakteri lain dan memungkinkannya untuk tumbuh dan berkembang biak pada suhu lemari es. <br>
+                        4. Resisten terhadap kondisi tertentu: Dapat bertahan pada kondisi garam yang tinggi dan pH di atas 5, serta resisten terhadap pengeringan. Namun, bakteri ini akan mati jika terpapar suhu pasteurisasi (sekitar 80°C). <br>
+                        5. Keberadaan di usus: Penelitian menunjukkan bahwa sebagian kecil manusia (sekitar 1-10%) mungkin memiliki L. monocytogenes di dalam ususnya tanpa menunjukkan gejala. <br>
+                    </p>
+                    <p>
+                       Lalu, apa penyakit apa yang disebabkan oleh listeriosis?
+                    </p>
+                    <p>
+                        Listeriosis adalah infeksi yang disebabkan oleh L. monocytogenes. Meskipun relatif jarang, listeriosis dapat menyebabkan penyakit yang serius, terutama pada kelompok-kelompok berikut: 
+                    </p>
+                    <p>
+                        1. Ibu hamil: Infeksi selama kehamilan dapat menyebabkan keguguran, kelahiran prematur, infeksi pada bayi baru lahir, atau bahkan kematian bayi.
+                    </p> 
+                    <p>
+                        2. Bayi baru lahir: Bayi yang terinfeksi saat lahir atau segera setelahnya dapat mengalami meningitis (radang selaput otak), septikemia (infeksi darah), atau masalah kesehatan serius lainnya.
+                    </p> 
+                    <p>
+                        3. Orang lanjut usia (di atas 65 tahun): Orang lanjut usia lebih rentan terhadap infeksi dan komplikasi yang lebih parah.
+                    </p>
+                    <p>
+                        4. Orang dengan sistem kekebalan tubuh yang lemah: Orang dengan kondisi medis tertentu (seperti HIV/AIDS, kanker, diabetes) atau yang sedang menjalani pengobatan yang menekan sistem kekebalan tubuh (seperti kemoterapi atau transplantasi organ) memiliki risiko lebih tinggi terkena listeriosis.
+                    </p>
+                    <p>
+                        Sumber Kontaminasi Makanan:
+                    </p>
+                    <p>
+                        1. Produk susu yang tidak dipasteurisasi: Susu mentah, keju lunak (seperti feta, brie, dan camembert).
+                    </p>
+                    <p>
+                        2. Daging olahan: Daging deli, hot dog, dan produk daging yang sudah dimasak lainnya.
+                    </p>
+                    <p>
+                        3. Sayuran mentah: Terutama jika terkontaminasi oleh tanah atau pupuk kandang yang mengandung bakteri.
+                    </p>
+                    <p>
+                        4. Makanan laut asap.
+                    </p>
+                </div>
+                <div class="sub-section">
+                    <h3>Campylobacter Jejuni</h3>
+                    <img src="https://www.shutterstock.com/image-illustration/campylobacter-bacteria-3d-illustration-gramnegative-600nw-2343920301.jpg" alt="Protein">
+                    <p>
+                        Campylobacter jejuni adalah bakteri berbentuk spiral (seperti koma), Gram-negatif yang merupakan penyebab utama gastroenteritis bakteri (radang lambung dan usus) pada manusia di seluruh dunia. Bakteri ini bersifat zoonosis, artinya dapat ditularkan dari hewan ke manusia.
+                    </p>
+                    <p>
+                        Campylobacter jejuni adalah penyebab utama campylobacteriosis, infeksi bakteri yang menyerang saluran pencernaan. Ini merupakan salah satu penyebab paling umum diare bakteri di banyak negara, bahkan melebihi kasus yang disebabkan oleh Salmonella dan Shigella digabungkan di beberapa tempat.
+                    </p>
+                    <p>
+                        Karakteristik Campylobacter jejuni
+                    </p>
+                    <p>
+                        1. Bentuk dan Ukuran: Berbentuk spiral atau melengkung (seperti huruf "S" atau koma) dengan ukuran kecil.
+                    </p>
+                    <p>
+                        2. Motil: Memiliki flagella (struktur seperti ekor) di salah satu atau kedua ujungnya, yang memungkinkannya bergerak.
+                    </p>
+                    <p>
+                        3. Mikroaerofilik: Membutuhkan lingkungan dengan kadar oksigen rendah untuk tumbuh optimal (tidak seperti kebanyakan bakteri yang membutuhkan oksigen penuh atau sama sekali tidak membutuhkannya).
+                    </p>
+                    <p>
+                        4. Pertumbuhan: Tumbuh paling baik pada suhu 42°C (suhu tubuh unggas), tetapi juga dapat tumbuh pada suhu yang lebih rendah.
+                    </p>
+                    <p>
+                        5. Sensitif terhadap kondisi lingkungan: Relatif sensitif terhadap pengeringan, panas, dan desinfektan.
+                    </p>
+                    <p>
+                        Penyebaran Sumber Penularan Campylobacter jejuni:
+                    </p>    
+                    <p>
+                        1. Unggas mentah atau kurang matang: Ini adalah sumber penularan yang paling umum. Ayam yang terkontaminasi selama pemrosesan dapat menyebarkan bakteri ke dagingnya.
+                    </p>    
+                    <p>
+                        2. Daging merah dan babi yang kurang matang.
+                    </p>
+                    <p>
+                        3. Susu mentah (tidak dipasteurisasi).
+                    </p>
+                    <p>
+                        4. Air yang terkontaminasi: Terutama air permukaan yang terkontaminasi tinja hewan.
+                    </p>
+                    <p>
+                        5. Kontak dengan hewan peliharaan yang terinfeksi: Anjing dan kucing dapat membawa bakteri ini.
+                    </p>
+                    <p>
+                        6. Kontaminasi silang: Memindahkan bakteri dari makanan mentah ke makanan matang melalui peralatan dapur, permukaan, atau tangan yang tidak bersih.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section-gizi">
+            <div class="gizi-content">
+                <div class="sub-section">
+                    <h3>Staphylococcus aureus</h3>
+                    <img src="https://st5.depositphotos.com/5316818/62470/i/450/depositphotos_624703950-stock-photo-bacteria-methicillin-resistant-staphylococcus-aureus.jpg" alt="Karbohidrat" width="300px">
+                    <p>
+                        Staphylococcus aureus (S. aureus) adalah bakteri umum yang dapat ditemukan pada kulit dan di hidung orang sehat. Meskipun seringkali tidak berbahaya, S. aureus dapat menyebabkan berbagai infeksi, termasuk keracunan makanan. Ketika S. aureus mencemari makanan dan dibiarkan berkembang biak, ia dapat menghasilkan racun (enterotoksin) yang tahan panas dan menyebabkan gejala keracunan makanan jika makanan tersebut dikonsumsi.
+                    </p>
+                    <p>
+                        Bagaimana S. aureus Mencemari Makanan?
+                    </p>
+                    <p>
+                        1. Kontak Manusia: Sumber kontaminasi yang paling umum adalah melalui kontak manusia, terutama tangan yang tidak dicuci. Orang yang membawa S. aureus di kulit atau hidungnya dapat memindahkan bakteri ke makanan selama proses penyiapan atau penanganan.
+                    </p>
+                    <p>
+                        2. Permukaan yang Terkontaminasi: Peralatan dapur, permukaan kerja, dan peralatan lainnya yang bersentuhan dengan makanan juga dapat menjadi sumber kontaminasi jika tidak dibersihkan dengan benar.
+                    </p>
+                    <p>
+                        3. Lingkungan: Meskipun lebih jarang, makanan juga dapat terkontaminasi dari lingkungan, seperti debu atau air yang terkontaminasi.
+                    </p>
+                    <p>
+                        Makanan yang Berisiko Tinggi Terkontaminasi S. aureus:
+                    </p>
+                    <p>
+                        1. Makanan Berprotein Tinggi: S. aureus cenderung tumbuh dengan baik pada makanan yang kaya protein, seperti: <br>
+                        Daging (terutama daging yang sudah dimasak dan dipotong-potong) <br>
+                        Unggas <br>
+                        Telur dan produk olahan telur <br>
+                        Produk susu (susu, keju, krim) <br>
+                        Salad (seperti salad kentang, salad tuna, salad ayam) <br>
+                        Pastri dan kue-kue isi krim <br>
+                    </p>
+                    <p>
+                        2. Makanan yang Disiapkan dan Dibiarkan pada Suhu Ruangan: Bakteri S. aureus berkembang biak dengan cepat pada suhu ruangan. Makanan yang dibiarkan pada suhu ruangan selama lebih dari dua jam sangat berisiko terkontaminasi dan menghasilkan racun.
+                    </p> 
+                </div>
+                <div class="sub-section">
+                    <h3>Vibrio vulnificus</h3>
+                    <img src="https://st2.depositphotos.com/2007325/9420/i/450/depositphotos_94203740-stock-photo-microscopic-view-of-vibrio-vulnificus.jpg" alt="Protein">
+                    <p>
+                        Vibrio vulnificus adalah bakteri yang hidup secara alami di air laut hangat dan payau (campuran air asin dan air tawar). Bakteri ini termasuk dalam kelompok Vibrio, yang juga mencakup bakteri penyebab kolera (Vibrio cholerae). V. vulnificus dapat menyebabkan infeksi serius pada manusia, terutama melalui dua cara: <br>
+                        1. Konsumsi makanan laut mentah atau kurang matang: Terutama kerang-kerangan seperti tiram. <br>
+                        2. Kontaminasi luka terbuka: Ketika luka terbuka terpapar air laut yang mengandung bakteri.
+                    </p>
+                    <p>
+                        Kelompok yang Berisiko Tinggi:
+                    </p>
+                    <p>
+                        Meskipun infeksi V. vulnificus relatif jarang, beberapa kelompok orang memiliki risiko lebih tinggi untuk mengalami infeksi yang parah:
+                    </p>
+                    <p>
+                        1. Orang dengan penyakit hati (liver): Ini adalah faktor risiko yang paling signifikan. Penyakit hati kronis, termasuk sirosis, meningkatkan kerentanan terhadap infeksi V. vulnificus yang parah.
+                    </p>
+                    <p>
+                        2. Orang dengan sistem kekebalan tubuh yang lemah: Misalnya, orang dengan HIV/AIDS, kanker, diabetes, atau yang sedang menjalani pengobatan imunosupresan.
+                    </p>
+                    <p>
+                        3. Orang dengan kadar zat besi berlebih dalam darah (hemochromatosis): Zat besi merupakan nutrisi penting bagi bakteri ini, sehingga kadar besi yang tinggi dalam darah dapat memicu pertumbuhan bakteri.
+
+                    </p>
+                    <p>
+                        Jenis Infeksi yang Disebabkan V. vulnificus:
+                    </p>
+                    <p>
+                        1. Infeksi Luka: Terjadi ketika luka terbuka terpapar air laut yang terkontaminasi. Gejala meliputi: <br>
+                        Kemerahan, bengkak, dan nyeri pada area luka. <br>
+                        Pembentukan lepuh berisi cairan. <br>
+                        Dalam kasus yang parah, infeksi dapat menyebar dengan cepat dan menyebabkan nekrosis jaringan (kematian jaringan), yang memerlukan amputasi. <br>
+                    </p>
+                    <p>
+                        2. Infeksi Saluran Pencernaan (Gastroenteritis): Terjadi setelah mengonsumsi makanan laut mentah atau kurang matang yang terkontaminasi. Gejala meliputi:Diare, Muntah, Nyeri perut
+                    </p>    
+                    <p>
+                        3. Septikemia (Infeksi Darah): Ini adalah bentuk infeksi V. vulnificus yang paling parah dan dapat mengancam jiwa. Gejala meliputi: Demam, Menggigil, Tekanan darah rendah (hipotensi), Syok septik, Pembentukan lepuh pada kulit (lesi kulit bulosa), yang merupakan ciri khas infeksi V. vulnificus.
+                    </p>    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

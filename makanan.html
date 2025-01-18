@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>info makanan</title>
+</head>
+<body>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://png.pngtree.com/background/20210711/original/pngtree-healthy-food-h5-background-picture-image_1078504.jpg); /* Ganti dengan path gambar Anda */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+body::before { /* Overlay agar teks mudah dibaca */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* Warna putih semi-transparan */
+    z-index: -1;
+}
+
+header {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.6); /* Latar belakang semi-transparan putih */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Border tipis dengan transparansi */
+    backdrop-filter: blur(5px); /* Efek blur */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transisi untuk hover */
+}
+
+.section:hover {
+    transform: translateY(-5px); /* Efek melayang saat hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,.2), 0 4px 8px rgba(0,0,0,.1);
+}
+
+.section h2 {
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.container {
+    position: relative; /* Penting agar posisi absolute pada logo berfungsi */
+    /* Style container lainnya */
+}
+
+.logo-link {
+    position: absolute; /* Memposisikan logo */
+    top: 10px; /* Jarak dari atas */
+    left: 10px; /* Jarak dari kanan */
+    z-index: 10; /* Memastikan logo berada di atas konten lain */
+    display: block; /* Mencegah spasi kosong di bawah gambar */
+}
+
+.logo-link img {
+    width: 50px; /* Atur lebar logo sesuai kebutuhan */
+    height: auto; /* Mempertahankan aspek rasio gambar */
+    transition: transform 0.2s; /* Efek transisi untuk hover */
+}
+
+.logo-link:hover img {
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Style untuk konten lainnya */
+.content{
+    text-align: center;
+    margin-top: 50px;
+}
+.pilihan{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.kotak{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+</style>
+    <header>
+        <a href="kesehatan.html" target="_blank" class="logo-link">
+            <img src="images/—Pngtree—back button_5401832.png" alt="kembali">
+        </a>
+        <h1>Informasi Makanan</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h4>Karbohidrat</h4>
+            <img src="https://asset-a.grid.id/crop/0x0:0x0/x/photo/2023/11/14/karbohidrat1jpg-20231114013316.jpg" alt="Makanan" width="300px">
+            <p>Kandungan karbohidrat bisa kita dapatkan dari beragam jenis makanan, seperti halnya kentang, ubi, gandum, beras merah dan jagung. Asupan karbohidrat harus diperhatikan karena 60 persen dari asupan kalori adalah karbohidrat yang juga merupakan sumber energi utama tubuh manusia. <br>
+                <h2></h2>
+            Porsi karbohidrat yang diperlukan oleh tubuh manusia bervariasi tergantung pada faktor-faktor seperti usia, tingkat aktivitas fisik, dan kebutuhan energi individu.Namun, secara umum, angka yang direkomendasikan adalah sekitar 45-65% dari total kalori harian. <br>
+                Untuk memberikan gambaran yang lebih spesifik: <br>
+                
+                Anak-anak (1-3 tahun): 130 gram karbohidrat per hari. <br>
+                
+                Anak-anak (4-18 tahun): 130-260 gram karbohidrat per hari. <br>
+                
+                Dewasa (19-50 tahun): 130-325 gram karbohidrat per hari. <br>
+                
+                Dewasa (51 tahun dan lebih tua): 130 gram karbohidrat per hari.</p>
+        </div>
+
+        <div class="section">
+            <h4>Protein</h4>
+            <img src="https://mysiloam-api.siloamhospitals.com/public-asset/website-cms/website-cms-16814427914478422.webp" alt="Makanan" width="300px">
+            <p>Tubuh manusia membutuhkan asupan protein 10-15% dari asupan protein harian. Sumber protein yang dapat dikonsumsi cukup beragam, baik protein nabati ataupun protein hewani. Asupan protein bisa didapat dari mengonsumsi telur, ikan, daging ayam, bebek, gandum, kacang almond dan kacang kedelai. <br> 
+                <h2></h2>
+            Protein yang masuk ke dalam tubuh akan diproses menjadi asam amino yang berfungsi membangun otot, organ tubuh, kulit dan rambut. Disisi lain, fungsi hormon juga diatur oleh protein. Kebutuhan protein untuk tubuh manusia juga bervariasi tergantung pada faktor-faktor seperti usia, tingkat aktivitas fisik, dan kondisi kesehatan. Namun, secara umum, angka yang direkomendasikan adalah sekitar 10-35% dari total kalori harian. <br>
+
+                Untuk memberikan gambaran yang lebih spesifik: <br>
+                
+                Anak-anak (1-3 tahun): 13 gram protein per hari. <br>
+                
+                Anak-anak (4-18 tahun): 19-34 gram protein per hari. <br>
+                
+                Dewasa (19-50 tahun): 46-56 gram protein per hari. <br>
+                
+                Dewasa (51 tahun dan lebih tua): 46 gram protein per hari.</p>
+        </div>
+
+        <div class="section">
+            <h4>Lemak</h4>
+            <img src="https://img-cdn.medkomtek.com/jC5I75QvTG3bMwn4B8FnWEE3DFE=/0x0/smart/filters:quality(100):format(webp)/article/ot3TLlLxCUZ8_AKgO0eg6/original/061476400_1585190840-Aneka-Lemak-Baik-shutterstock_396446890.jpg" alt="Makanan" width="300px">
+            <p>Lemak terbagi menjadi dua, yaitu lemak jenuh yang bisa didapat dari mengonsumsi daging, minyak kelapa dan susu, lalu lemak tak jenuh bisa didapat dari mengonsumsi ikan, alpukat, dan kacang-kacangan. Pada hakikatnya lemak adalah sumber energi yang baik dan dibutuhkan untuk kesehatan tubuh. Akan tetapi, lemak harus dikonsumsi dengan jumlah yang cukup dan tidak berlebihan agar tidak terjadi obesitas. <br>
+                <h2></h2>
+            Obesitas terjadi karena adanya penambahan kalori yang berlebih ke dalam tubuh. Kebutuhan lemak untuk tubuh manusia juga bervariasi tergantung pada faktor-faktor seperti usia, tingkat aktivitas fisik, dan kondisi kesehatan. Namun, secara umum, angka yang direkomendasikan adalah sekitar 20-35% dari total kalori harian. <br>
+
+                Untuk memberikan gambaran yang lebih spesifik: <br>
+                
+                Anak-anak (1-3 tahun): 30-40 gram lemak per hari. <br>
+                
+                Anak-anak (4-18 tahun): 25-35 gram lemak per hari. <br>
+                
+                Dewasa (19-50 tahun): 44-77 gram lemak per hari. <br>
+                
+                Dewasa (51 tahun dan lebih tua): 44 gram lemak per hari.</p>
+        </div>
+
+        <div class="section">
+            <h4>Vitamin</h4>
+            <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1603360090/attached_image/kenali-beragam-vitamin-dan-mineral-yang-penting-untuk-kesehatan.jpg" alt="Makanan" width="300px">
+            <p>Untuk meningkatkan daya tahan tubuh, vitamin sangatlah dibutuhkan. Vitamin pun sangat beragam dan bisa didapatkan dari setiap makanan yang dikonsumsi setiap hari. Vitamin merupakan kandungan penting yang terdapat dalam makanan, akan tetapi bisa saja hilang apabila dimasak terlalu lama. Hal ini harus diperhatikan, karena vitamin memegang peran penting dalam menjaga kesehatan badan. <br>
+                <h2></h2>
+            Maka dari itu, untuk mencegah hilangnya kandungan vitamin, pilihlah makanan yang mudah diolah dengan cara dikukus, direbus atau ditumis seperti wortel, minyak ikan, bayam, brokoli, jeruk, alpukat, kacang panjang, daging sapi, dan ayam. Kebutuhan vitamin untuk tubuh manusia bervariasi tergantung pada jenis vitamin dan faktor-faktor seperti usia, tingkat aktivitas fisik, dan kondisi kesehatan. Berikut adalah beberapa vitamin penting beserta angka kebutuhan harian yang direkomendasikan: <br>
+
+                Vitamin A: 700-900 mikrogram (mcg) per hari. <br>
+                
+                Vitamin B1 (Thiamin): 1.1-1.2 miligram (mg) per hari. <br>
+                
+                Vitamin B2 (Riboflavin): 1.1-1.3 mg per hari. <br>
+                
+                Vitamin B3 (Niacin): 14-16 mg per hari. <br>
+                
+                Vitamin B6: 1.3-1.7 mg per hari. <br>
+                
+                Vitamin B12: 2.4 mcg per hari. <br>
+                
+                Vitamin C: 65-90 mg per hari. <br>
+                
+                Vitamin D: 15-20 mcg per hari. <br>
+                
+                Vitamin E: 15 mg per hari. <br>
+                
+                Vitamin K: 90-120 mcg per hari.</p>
+        </div>
+
+        <div class="section">
+            <h4>Kalsium</h4>
+            <img src="https://cdn1-production-images-kly.akamaized.net/9HP1NWHrn6D4kAarcTJ8WEEkZAg=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2783132/original/023776500_1555658001-iStock-949394412.jpg" alt="Makanan" width="300px">
+            <p>Asupan kalsium yang tidak memadai dapat menyebabkan osteoporosis. Tidak hanya itu, tetapi juga dapat menyebabkan kecemasan, depresi, dan insomnia. Keju, yogurt, almond, dan tahu adalah makanan yang mengandung kalsium. Kebutuhan kalsium untuk tubuh manusia bervariasi tergantung pada usia dan jenis kelamin. Berikut adalah angka kebutuhan harian yang direkomendasikan: <br>
+
+                Anak-anak (1-3 tahun): 700 mg kalsium per hari. <br>
+                
+                Anak-anak (4-8 tahun): 1,000 mg kalsium per hari. <br>
+                
+                Anak-anak (9-18 tahun): 1,300 mg kalsium per hari. <br>
+                 
+                Dewasa (19-50 tahun): 1,000 mg kalsium per hari. <br>
+                
+                Dewasa (51 tahun dan lebih tua): 1,200 mg kalsium per hari. <br>
+                
+                Ibu hamil dan menyusui: 1,300 mg kalsium per hari.</p>
+        </div>
+
+        <div class="section">
+            <h4>Mineral</h4>
+            <img src="https://o-cdn-cas.oramiland.com/parenting/images/8_Mineral_Esensial_Untuk_Tumbuh_K.width-800.format-webp_D6Eqmhf.webp" alt="Makanan" width="300px">
+            <p>Mineral adalah zat yang ditemukan di tanah dan dicerna dari makanan. Oleh karena itu, kita dapat mengekstrak mineral dari sumber tumbuhan dan hewan. Untuk meraih asupan mineral dari makanan bisa didapat dengan mencoba sayuran hijau, alpukat, kacang brazil, sarden, udang merah, dan kalkun. <br>
+                <h2></h2>
+            Kandungan mineral yang harus ada dalam tubuh, seperti zat besi, seng, kalsium, selenium, klorida, kalium, yodium, magnesium dan tembaga. Kebutuhan mineral untuk tubuh manusia bervariasi tergantung pada jenis mineral dan faktor-faktor seperti usia, tingkat aktivitas fisik, dan kondisi kesehatan. Berikut adalah beberapa mineral penting beserta angka kebutuhan harian yang direkomendasikan: <br>
+
+                Kalsium: 1,000-1,300 mg per hari (tergantung usia dan jenis kelamin). <br>
+                
+                Magnesium: 310-420 mg per hari. <br>
+                
+                Fosfor: 700 mg per hari. <br>
+                
+                Klor: 2,300-3,300 mg per hari. <br>
+                
+                Seng: 8-11 mg per hari. <br>
+                
+                Selenium: 55 mcg per hari. <br> 
+                
+                Yodium: 150 mcg per hari. <br>
+                
+                Kuprum: 700-900 mcg per hari.</p>
+        </div>
+
+        <div class="section">
+            <h4>Serat</h4>
+            <img src="https://www.frisianflag.com/storage/app/media/uploaded-files/sumber-serat.jpg" alt="Makanan" width="300px">
+            <p>Makan makanan berserat tinggi seperti biji-bijian, buah-buahan, sayuran, kacang-kacangan, dan kacang-kacangan dapat mengurangi risiko penyakit jantung, stroke, dan diabetes. Selain itu, makanan yang mengandung serat tidak hanya baik untuk kulit, tetapi juga membantu menurunkan berat badan. Kebutuhan serat untuk tubuh manusia bervariasi tergantung pada usia dan jenis kelamin. Berikut adalah angka kebutuhan harian yang direkomendasikan: <br>
+
+                Anak-anak (1-3 tahun): 19 gram serat per hari. <br>
+                
+                Anak-anak (4-8 tahun): 25 gram serat per hari. <br>
+                
+                Anak-anak (9-13 tahun): 26 gram serat per hari. <br>
+                
+                Remaja (14-18 tahun): 31 gram serat per hari. <br>
+                
+                Dewasa (19-50 tahun): 25-38 gram serat per hari. <br>
+                
+                Dewasa (51 tahun dan lebih tua): 21 gram serat per hari. <br>
+                
+                Ibu hamil dan menyusui: 28 gram serat per hari.</p>
+        </div>
+
+        <div class="section">
+            <h4>Air</h4>
+            <img src="https://awsimages.detik.net.id/community/media/visual/2023/02/01/ilustrasi-air-minum.jpeg?w=1200" alt="Makanan" width="300px">
+            <p>Air adalah bagian penting dari makanan sehat dan bergizi. Hal ini disebabkan karena tubuh manusia terdiri dari 60% air, maka manusia perlu memenuhi kebutuhan air hariannya dengan meminum 44.448 gelas air atau setara dengan 2 liter air setiap hari. Kekurangan minum air dapat menyebabkan berbagai masalah kesehatan seperti batu ginjal dan sembelit. Manfaat air bagi tubuh adalah membantu menyerap, mencerna, mengeluarkan, mendistribusikan nutrisi ke tubuh dan mengatur suhu tubuh.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

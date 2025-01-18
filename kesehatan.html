@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kesehatan</title>
+</head>
+<body>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(images/Toska\ Putih\ Illustrasi\ Hari\ Kesehatan\ Dunia\ Banner.png); /* Ganti dengan path gambar Anda */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+body::before { /* Overlay agar teks mudah dibaca */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* Warna putih semi-transparan */
+    z-index: -1;
+}
+
+header {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.6); /* Latar belakang semi-transparan putih */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Border tipis dengan transparansi */
+    backdrop-filter: blur(5px); /* Efek blur */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transisi untuk hover */
+}
+
+.section:hover {
+    transform: translateY(-5px); /* Efek melayang saat hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,.2), 0 4px 8px rgba(0,0,0,.1);
+}
+
+.section h2 {
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.section-kesehatan { /* Styling untuk bagian "Kesehatan" */
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    width: 90%; /* Lebar bagian kesehatan */
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.kesehatan-content {
+    display: flex; /* Mengaktifkan flexbox */
+    gap: 20px; /* Jarak antar sub-section */
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+}
+
+.sub-section {
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang sub-section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Border tipis */
+    flex: 1; /* Membuat sub-section memiliki lebar yang sama dan mengisi ruang yang tersedia */
+    min-width: 300px; /* Lebar minimum sub-section agar tidak terlalu sempit */
+    box-sizing: border-box; /* Agar padding dan border termasuk dalam lebar total */
+}
+
+.sub-section h3 {
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.container {
+    position: relative; /* Penting agar posisi absolute pada logo berfungsi */
+    /* Style container lainnya */
+}
+
+.logo-link {
+    position: absolute; /* Memposisikan logo */
+    top: 10px; /* Jarak dari atas */
+    right: 10px; /* Jarak dari kanan */
+    z-index: 10; /* Memastikan logo berada di atas konten lain */
+    display: block; /* Mencegah spasi kosong di bawah gambar */
+}
+
+.logo-link img {
+    width: 80px; /* Atur lebar logo sesuai kebutuhan */
+    height: auto; /* Mempertahankan aspek rasio gambar */
+    transition: transform 0.2s; /* Efek transisi untuk hover */
+}
+
+.logo-link:hover img {
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Style untuk konten lainnya */
+.content{
+    text-align: center;
+    margin-top: 50px;
+}
+.pilihan{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.kotak{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+</style>
+    <header>
+        <a href="https://itpln.ac.id/id/" target="_blank" class="logo-link">
+            <img src="images/WhatsApp_Image_2024-06-11_at_09.24.04-removebg-preview.png" alt="Deskripsi Logo">
+        </a>
+        <h1>Apa yang ingin kamu ketahui?</h1>
+    </header>
+    <div class="container">
+        <div class="section-kesehatan">
+            <div class="kesehatan-content"> 
+                <div class="sub-section">
+                    <img src="https://mysiloam-api.siloamhospitals.com/public-asset/website-cms/website-cms-16939727505252906.webp" alt="Makanan" width="300px">
+                    <a href="pembuka_makanan.html"><h3>Makanan</h3></a>
+                </div>
+                <div class="sub-section">
+                    <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/01/2024/01/23/Penyakit-X-4056752722.jpg" alt="Penyakit" width="300px">
+                    <a href="pembuka_penyakit.html"><h3>Penyakit</h3></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

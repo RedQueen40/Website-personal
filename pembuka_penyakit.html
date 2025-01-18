@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>penyakit</title>
+</head>
+<body>
+  <style> 
+    body {
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-image: url(images/green\ illustrated\ forest\ linktree\ backgound.png); /* Ganti dengan path gambar Anda */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; /* Mencegah gambar berulang */
+    }
+    
+    .container {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan untuk container */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .typing-container {
+        width: 80%;
+        max-width: 600px;
+        margin-bottom: 30px; /* Jarak lebih besar dari tombol */
+    }
+    
+    #typing-text {
+        overflow: hidden;
+        white-space: pre-wrap;
+        border-right: .15em solid orange;
+        animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+    
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+    }
+    
+    .button-container { /* Style untuk container tombol */
+        display: flex;
+        justify-content: center; /* Memusatkan tombol secara horizontal */
+    }
+    
+    #next-page {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    #next-page:hover {
+        background-color: #45a049;
+    }
+  </style> 
+    <div class="container">
+        <div class="typing-container">
+            <p id="typing-text">Teman-teman, kalian tahu tidak kalau makanan itu bisa menyebabkan beberapa penyakit yang berbahaya loh, bisa saja kita keracunan, diare, dan lain-lain. Makanan yang seharusnya sehat, bisa menjadi bumerang bagi kita bila salah mengolahnya. Terus bagaimana caranya kita bisa mengelola makanan dengan baik?</p>
+        </div>
+        <div class="button-container"> 
+            <a href="penyakit.html"><button id="next-page">Ayo Kita Cari Tahu</button></a> 
+        </div>
+    </div>
+<script>
+const text = document.getElementById('typing-text').textContent;
+const typingText = document.getElementById('typing-text');
+const nextPageButton = document.getElementById('next-page');
+const buttonContainer = document.querySelector('.button-container')
+
+typingText.textContent = '';
+
+let i = 0;
+const speed = 50;
+
+function typeWriter() {
+    if (i < text.length) {
+        typingText.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    } else {
+        buttonContainer.style.display = 'flex';
+        nextPageButton.addEventListener('click', function() {
+            window.location.href = "halaman_selanjutnya.html";
+        });
+    }
+}
+buttonContainer.style.display = 'none';
+typeWriter();
+</script>
+</body>
+</html>
